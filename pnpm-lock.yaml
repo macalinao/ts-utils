@@ -29,6 +29,28 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8
 
+  packages/format-ordinal:
+    dependencies:
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+    devDependencies:
+      "@macalinao/eslint-config":
+        specifier: ^4.0.1
+        version: 4.0.1(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.2)
+      "@macalinao/tsconfig":
+        specifier: ^3.0.0
+        version: 3.0.0
+      eslint:
+        specifier: ^9.17.0
+        version: 9.17.0(jiti@1.21.6)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.8
+
   packages/nonempty-array:
     dependencies:
       tslib:
