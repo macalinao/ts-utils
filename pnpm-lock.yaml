@@ -51,6 +51,37 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8
 
+  packages/kysely-utils:
+    dependencies:
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+    devDependencies:
+      "@macalinao/eslint-config":
+        specifier: ^4.0.1
+        version: 4.0.1(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.2)
+      "@macalinao/tsconfig":
+        specifier: ^3.0.0
+        version: 3.0.0
+      eslint:
+        specifier: ^9.17.0
+        version: 9.17.0(jiti@1.21.6)
+      kysely:
+        specifier: ^0.27.5
+        version: 0.27.5
+      temporal-polyfill:
+        specifier: ^0.2.5
+        version: 0.2.5
+      temporal-spec:
+        specifier: ^0.2.4
+        version: 0.2.4
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.8
+
   packages/nonempty-array:
     dependencies:
       tslib:
@@ -1820,6 +1851,13 @@ packages:
         integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==,
       }
 
+  kysely@0.27.5:
+    resolution:
+      {
+        integrity: sha512-s7hZHcQeSNKpzCkHRm8yA+0JPLjncSWnjb+2TIElwS2JAqYr+Kv3Ess+9KFfJS0C1xcQ1i9NkNHpWwCYpHMWsA==,
+      }
+    engines: { node: ">=14.0.0" }
+
   levn@0.4.1:
     resolution:
       {
@@ -2478,6 +2516,18 @@ packages:
         integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==,
       }
     engines: { node: ">=6" }
+
+  temporal-polyfill@0.2.5:
+    resolution:
+      {
+        integrity: sha512-ye47xp8Cb0nDguAhrrDS1JT1SzwEV9e26sSsrWzVu+yPZ7LzceEcH0i2gci9jWfOfSCCgM3Qv5nOYShVUUFUXA==,
+      }
+
+  temporal-spec@0.2.4:
+    resolution:
+      {
+        integrity: sha512-lDMFv4nKQrSjlkHKAlHVqKrBG4DyFfa9F74cmBZ3Iy3ed8yvWnlWSIdi4IKfSqwmazAohBNwiN64qGx4y5Q3IQ==,
+      }
 
   term-size@2.2.1:
     resolution:
@@ -3852,6 +3902,8 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
+  kysely@0.27.5: {}
+
   levn@0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -4188,6 +4240,12 @@ snapshots:
       tslib: 2.8.1
 
   tapable@2.2.1: {}
+
+  temporal-polyfill@0.2.5:
+    dependencies:
+      temporal-spec: 0.2.4
+
+  temporal-spec@0.2.4: {}
 
   term-size@2.2.1: {}
 
