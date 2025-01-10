@@ -1,5 +1,6 @@
 export * from "./analyze.js";
 export * from "./compileQueryBuilder.js";
+export * from "./createKyselyUtils.js";
 export * from "./geography.js";
 export * from "./publicId.js";
 export * from "./temporal.js";
