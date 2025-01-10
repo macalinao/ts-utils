@@ -1,9 +1,10 @@
-import type { ExpressionBuilder, UpdateObject } from "kysely";
+import type { ExpressionBuilder, QueryCreator, UpdateObject } from "kysely";
 import { expressionBuilder } from "kysely";
 import type { PrefixMapping } from "zod-extra";
 
 import type { PublicIDHelpers } from "./publicId.js";
 import { makePublicIDHelpers } from "./publicId.js";
+import type { SelectQB } from "./types.js";
 import type { UpdateFieldExpression } from "./update.js";
 import { createUpdate, createUpdateFn } from "./update.js";
 
@@ -43,3 +44,11 @@ export const createKyselyUtils = <DB, TMapping extends PrefixMapping>(
     defaultEb: expressionBuilder<DB, never>(),
   };
 };
+
+/**
+ * Helper types for a database.
+ */
+export interface KyselyTypeUtils<DB> {
+  QueryBuilder: QueryCreator<DB>;
+  SelectBuilder: SelectQB<DB>;
+}
