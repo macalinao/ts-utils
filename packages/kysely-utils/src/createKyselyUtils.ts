@@ -1,4 +1,5 @@
-import type { UpdateObject } from "kysely";
+import type { ExpressionBuilder, UpdateObject } from "kysely";
+import { expressionBuilder } from "kysely";
 import type { PrefixMapping } from "zod-extra";
 
 import type { PublicIDHelpers } from "./publicId.js";
@@ -14,6 +15,7 @@ export interface KyselyUtils<DB, TMapping extends PrefixMapping = PrefixMapping>
   createUpdateFn: <TB extends keyof DB, T>(updates: {
     [K in keyof T]: UpdateFieldExpression<DB, TB, T, K>;
   }) => (data: Partial<T>) => UpdateObject<DB, TB>;
+  defaultEb: ExpressionBuilder<DB, never>;
 }
 
 /**
@@ -33,5 +35,6 @@ export const createKyselyUtils = <DB, TMapping extends PrefixMapping>(
     createUpdateFn: <TB extends keyof DB, T>(updates: {
       [K in keyof T]: UpdateFieldExpression<DB, TB, T, K>;
     }) => createUpdateFn<DB, TB, T>(updates),
+    defaultEb: expressionBuilder<DB, never>(),
   };
 };
