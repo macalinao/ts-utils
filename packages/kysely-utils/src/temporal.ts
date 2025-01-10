@@ -31,3 +31,25 @@ export function zonedDateTime(value: Temporal.ZonedDateTime): RawBuilder<Date> {
 export function plainDate(value: Temporal.PlainDate): RawBuilder<string> {
   return sql`${value.toString()}`;
 }
+
+/**
+ * Creates a raw builder for a PlainTime value.
+ *
+ * @param value - The PlainTime value to create a raw builder for.
+ * @returns A raw builder for the PlainTime value.
+ */
+export function plainTime(value: Temporal.PlainTime): RawBuilder<string> {
+  return sql`${value.toString()}`;
+}
+
+/**
+ * Creates a raw builder for a PlainDateTime value.
+ *
+ * @param value - The PlainDateTime value to create a raw builder for.
+ * @returns A raw builder for the PlainDateTime value.
+ */
+export function plainDateTime(
+  value: Temporal.PlainDateTime,
+): RawBuilder<string> {
+  return sql`${value.toString()}`;
+}
