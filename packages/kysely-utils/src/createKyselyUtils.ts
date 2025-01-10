@@ -2,7 +2,7 @@ import type { ExpressionBuilder, QueryCreator, UpdateObject } from "kysely";
 import { expressionBuilder } from "kysely";
 import type { PrefixMapping } from "zod-extra";
 
-import type { PublicIDHelpers } from "./publicId.js";
+import type { PrefixedTablesWithID, PublicIDHelpers } from "./publicId.js";
 import { makePublicIDHelpers } from "./publicId.js";
 import type { SelectQB } from "./types.js";
 import type { UpdateFieldExpression } from "./update.js";
@@ -30,7 +30,10 @@ export interface KyselyUtils<DB, TMapping extends PrefixMapping = PrefixMapping>
  * @param mapping - The mapping to use for the utilities.
  * @returns A set of utilities for working with Kysely.
  */
-export const createKyselyUtils = <DB, TMapping extends PrefixMapping>(
+export const createKyselyUtils = <
+  DB,
+  TMapping extends PrefixMapping = PrefixMapping,
+>(
   mapping: TMapping,
 ): KyselyUtils<DB, TMapping> => {
   return {
@@ -48,7 +51,11 @@ export const createKyselyUtils = <DB, TMapping extends PrefixMapping>(
 /**
  * Helper types for a database.
  */
-export interface KyselyTypeUtils<DB> {
+export interface KyselyTypeUtils<
+  DB,
+  TMapping extends PrefixMapping = PrefixMapping,
+> {
   QueryBuilder: QueryCreator<DB>;
   SelectBuilder: SelectQB<DB>;
+  PrefixedTableWithId: PrefixedTablesWithID<DB, TMapping>;
 }
