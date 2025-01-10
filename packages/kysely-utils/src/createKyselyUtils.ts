@@ -7,6 +7,11 @@ import { makePublicIDHelpers } from "./publicId.js";
 import type { UpdateFieldExpression } from "./update.js";
 import { createUpdate, createUpdateFn } from "./update.js";
 
+/**
+ * Generates utilities for a Kysely database.
+ *
+ * Note that this cannot be tree-shaken. This should not matter since this is run server-side.
+ */
 export interface KyselyUtils<DB, TMapping extends PrefixMapping = PrefixMapping>
   extends PublicIDHelpers<DB, TMapping> {
   createUpdate: <TB extends keyof DB>(
