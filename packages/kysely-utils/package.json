@@ -32,7 +32,8 @@
     "temporal-polyfill": "^0.2.5",
     "temporal-spec": "^0.2.4",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.8",
+    "zod": "^3.24.1"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -58,6 +59,7 @@
   },
   "peerDependencies": {
     "kysely": "^0.27.5",
-    "temporal-spec": "^0.2.4"
+    "temporal-spec": "^0.2.4",
+    "zod": "^3.24.1"
   }
 }
