@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.0.3
+
+### Patch Changes
+
+- d3baa6c: Fix peer dependency for zod
+
 ## 0.0.2
 
 ### Patch Changes
