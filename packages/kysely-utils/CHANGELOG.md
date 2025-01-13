@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.0.4
+
+### Patch Changes
+
+- 0f8d200: Fix type narrowing for raw/public id not nulls
+
 ## 0.0.3
 
 ### Patch Changes
