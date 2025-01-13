@@ -1,5 +1,16 @@
 # kysely-utils
 
+## 0.1.0
+
+### Minor Changes
+
+- 6636ed2: Switch to minor version
+- 38965c9: Fix types of publicId/id helpers again
+
+### Patch Changes
+
+- 0af4ce6: Bump zod-extra
+
 ## 0.0.4
 
 ### Patch Changes
