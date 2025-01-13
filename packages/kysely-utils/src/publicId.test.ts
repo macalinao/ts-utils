@@ -1,7 +1,7 @@
-import type { Generated } from "kysely";
+import type { Generated, RootOperationNode } from "kysely";
 import { describe, expect, it } from "vitest";
 
-import { compileQueryBuilder } from "./compileQueryBuilder.js";
+import { compileRootOperationNode } from "./compileQueryBuilder.js";
 import type { PublicIdColumns } from "./publicId.js";
 import { makePublicIDHelpers } from "./publicId.js"; // Adjust the import path as necessary
 
@@ -23,7 +23,9 @@ const { publicToRawId, rawToPublicId } = makePublicIDHelpers<
 describe("publicId", () => {
   it("should convert a valid raw ID to a public ID", () => {
     const rawId = "12345";
-    const result = compileQueryBuilder(rawToPublicId("users", rawId));
+    const result = compileRootOperationNode(
+      rawToPublicId("users", rawId).toOperationNode() as RootOperationNode,
+    );
     expect(result.sql).toBe(
       `select "users"."public_id" from "users" where "users"."id" = $1`,
     );
@@ -32,7 +34,9 @@ describe("publicId", () => {
 
   it("should convert a valid public ID to a raw ID", () => {
     const publicId = "usr_12345";
-    const result = compileQueryBuilder(publicToRawId("users", publicId));
+    const result = compileRootOperationNode(
+      publicToRawId("users", publicId).toOperationNode() as RootOperationNode,
+    );
     expect(result.sql).toBe(
       `select "users"."id" from "users" where "users"."public_id" = $1`,
     );

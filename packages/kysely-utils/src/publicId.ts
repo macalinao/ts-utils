@@ -6,7 +6,7 @@
  *
  * This is useful for building APIs and for creating type-safe ID types.
  */
-import type { Generated, NotNull, SelectQueryBuilder } from "kysely";
+import type { AliasableExpression, Generated } from "kysely";
 import { expressionBuilder } from "kysely";
 import type {
   IDSchemas,
@@ -58,13 +58,7 @@ export const makeNullablePublicToRawIdExpression = <
 >(
   table: TTable,
   id: ExpressionArg<PrefixedId<TMapping, TTable> | null>,
-): SelectQueryBuilder<
-  DB,
-  TTable,
-  {
-    id: string | null;
-  }
-> => {
+): AliasableExpression<string | null> => {
   return expressionBuilder<DB, TTable>()
     .selectFrom(table)
     .whereRef(
@@ -76,13 +70,8 @@ export const makeNullablePublicToRawIdExpression = <
     .select(
       // @ts-expect-error kysely doesn't like these types
       `${table}.id` as const,
-    ) as SelectQueryBuilder<
-    DB,
-    TTable,
-    {
-      id: string | null;
-    }
-  >;
+    )
+    .$castTo<string | null>();
 };
 
 /**
@@ -99,19 +88,11 @@ export const makePublicToRawIdExpression = <
 >(
   table: TTable,
   id: ExpressionArg<PrefixedId<TMapping, TTable>>,
-): SelectQueryBuilder<
-  DB,
-  TTable,
-  {
-    id: Exclude<string, null>;
-  }
-> => {
+): AliasableExpression<string> => {
   return makeNullablePublicToRawIdExpression<DB, TMapping, TTable>(
     table,
     id,
-  ).$narrowType<{
-    id: NotNull;
-  }>();
+  ) as AliasableExpression<string>;
 };
 
 /**
@@ -128,13 +109,7 @@ export const makeNullableRawToPublicIdExpression = <
 >(
   table: TTable,
   id: ExpressionArg<string | null>,
-): SelectQueryBuilder<
-  DB,
-  TTable,
-  {
-    public_id: PrefixedId<TMapping, TTable> | null;
-  }
-> => {
+): AliasableExpression<PrefixedId<TMapping, TTable> | null> => {
   return expressionBuilder<DB, TTable>()
     .selectFrom(table)
     .whereRef(
@@ -146,13 +121,8 @@ export const makeNullableRawToPublicIdExpression = <
     .select(
       // @ts-expect-error kysely doesn't like these types
       `${table}.public_id` as const,
-    ) as SelectQueryBuilder<
-    DB,
-    TTable,
-    {
-      public_id: PrefixedId<TMapping, TTable> | null;
-    }
-  >;
+    )
+    .$castTo<PrefixedId<TMapping, TTable> | null>();
 };
 
 export const makeRawToPublicIdExpression = <
@@ -162,17 +132,11 @@ export const makeRawToPublicIdExpression = <
 >(
   table: TTable,
   id: ExpressionArg<string>,
-): SelectQueryBuilder<
-  DB,
-  TTable,
-  {
-    public_id: Exclude<PrefixedId<TMapping, TTable>, null>;
-  }
-> => {
+): AliasableExpression<PrefixedId<TMapping, TTable>> => {
   return makeNullableRawToPublicIdExpression<DB, TMapping, TTable>(
     table,
     id,
-  ).$narrowType<{ public_id: NotNull }>();
+  ) as AliasableExpression<PrefixedId<TMapping, TTable>>;
 };
 
 /**
@@ -182,39 +146,19 @@ export interface PublicIDHelpers<DB, TMapping extends PrefixMapping> {
   publicToRawId: <TTable extends PrefixedTablesWithID<DB, TMapping>>(
     table: TTable,
     id: ExpressionArg<PrefixedId<TMapping, TTable>>,
-  ) => SelectQueryBuilder<
-    DB,
-    TTable,
-    {
-      id: string;
-    }
-  >;
+  ) => AliasableExpression<string>;
   publicToRawIdNullable: <TTable extends PrefixedTablesWithID<DB, TMapping>>(
     table: TTable,
     id: ExpressionArg<PrefixedId<TMapping, TTable> | null>,
-  ) => SelectQueryBuilder<
-    DB,
-    TTable,
-    {
-      id: string | null;
-    }
-  >;
+  ) => AliasableExpression<string | null>;
   rawToPublicId: <TTable extends PrefixedTablesWithID<DB, TMapping>>(
     table: TTable,
     id: ExpressionArg<string>,
-  ) => SelectQueryBuilder<
-    DB,
-    TTable,
-    { public_id: PrefixedId<TMapping, TTable> }
-  >;
+  ) => AliasableExpression<PrefixedId<TMapping, TTable>>;
   rawToPublicIdNullable: <TTable extends PrefixedTablesWithID<DB, TMapping>>(
     table: TTable,
     id: ExpressionArg<string | null>,
-  ) => SelectQueryBuilder<
-    DB,
-    TTable,
-    { public_id: PrefixedId<TMapping, TTable> | null }
-  >;
+  ) => AliasableExpression<PrefixedId<TMapping, TTable> | null>;
   zId: IDSchemas<TMapping>;
 }
 

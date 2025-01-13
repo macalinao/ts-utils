@@ -3,6 +3,12 @@ import { PostgresQueryCompiler } from "kysely";
 
 const compiler = new PostgresQueryCompiler();
 
+export const compileRootOperationNode = (
+  node: RootOperationNode,
+): CompiledQuery => {
+  return compiler.compileQuery(node);
+};
+
 /**
  * Compiles a Kysely query builder to a compiled query.
  *
@@ -12,5 +18,5 @@ const compiler = new PostgresQueryCompiler();
 export const compileQueryBuilder = (query: {
   toOperationNode: () => RootOperationNode;
 }): CompiledQuery => {
-  return compiler.compileQuery(query.toOperationNode());
+  return compileRootOperationNode(query.toOperationNode());
 };
