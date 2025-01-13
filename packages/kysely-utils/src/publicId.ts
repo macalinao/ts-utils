@@ -6,7 +6,7 @@
  *
  * This is useful for building APIs and for creating type-safe ID types.
  */
-import type { Generated, SelectQueryBuilder } from "kysely";
+import type { Generated, NotNull, SelectQueryBuilder } from "kysely";
 import { expressionBuilder } from "kysely";
 import type {
   IDSchemas,
@@ -103,14 +103,14 @@ export const makePublicToRawIdExpression = <
   DB,
   TTable,
   {
-    id: string;
+    id: Exclude<string, null>;
   }
 > => {
   return makeNullablePublicToRawIdExpression<DB, TMapping, TTable>(
     table,
     id,
   ).$narrowType<{
-    id: string;
+    id: NotNull;
   }>();
 };
 
@@ -166,13 +166,13 @@ export const makeRawToPublicIdExpression = <
   DB,
   TTable,
   {
-    public_id: PrefixedId<TMapping, TTable>;
+    public_id: Exclude<PrefixedId<TMapping, TTable>, null>;
   }
 > => {
   return makeNullableRawToPublicIdExpression<DB, TMapping, TTable>(
     table,
     id,
-  ).$narrowType();
+  ).$narrowType<{ public_id: NotNull }>();
 };
 
 /**
