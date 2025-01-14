@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.1.1
+
+### Patch Changes
+
+- 5ad01e8: Add jsonbArrayColumnFrom helper
+
 ## 0.1.0
 
 ### Minor Changes
