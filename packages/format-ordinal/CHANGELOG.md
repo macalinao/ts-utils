@@ -1,5 +1,11 @@
 # format-ordinal
 
+## 0.1.1
+
+### Patch Changes
+
+- 656ea13: Update TypeScript to use 2024 output, add groupByNEA
+
 ## 0.1.0
 
 ### Minor Changes

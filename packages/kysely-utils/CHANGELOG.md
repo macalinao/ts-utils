@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.1.2
+
+### Patch Changes
+
+- 656ea13: Update TypeScript to use 2024 output, add groupByNEA
+
 ## 0.1.1
 
 ### Patch Changes
