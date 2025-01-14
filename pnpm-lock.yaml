@@ -25,6 +25,9 @@ importers:
       typedoc:
         specifier: ^0.27.6
         version: 0.27.6(typescript@5.7.3)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
       vitest:
         specifier: ^2.1.8
         version: 2.1.8
@@ -36,11 +39,11 @@ importers:
         version: 2.8.1
     devDependencies:
       "@macalinao/eslint-config":
-        specifier: ^4.0.3
-        version: 4.0.3(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
+        specifier: ^4.1.0
+        version: 4.1.0(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
       "@macalinao/tsconfig":
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.1.0
+        version: 3.1.0
       eslint:
         specifier: ^9.18.0
         version: 9.18.0(jiti@1.21.6)
@@ -61,11 +64,11 @@ importers:
         version: 0.0.4(zod@3.24.1)
     devDependencies:
       "@macalinao/eslint-config":
-        specifier: ^4.0.3
-        version: 4.0.3(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
+        specifier: ^4.1.0
+        version: 4.1.0(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
       "@macalinao/tsconfig":
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.1.0
+        version: 3.1.0
       eslint:
         specifier: ^9.18.0
         version: 9.18.0(jiti@1.21.6)
@@ -95,11 +98,11 @@ importers:
         version: 2.8.1
     devDependencies:
       "@macalinao/eslint-config":
-        specifier: ^4.0.3
-        version: 4.0.3(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
+        specifier: ^4.1.0
+        version: 4.1.0(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)
       "@macalinao/tsconfig":
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.1.0
+        version: 3.1.0
       eslint:
         specifier: ^9.18.0
         version: 9.18.0(jiti@1.21.6)
@@ -539,16 +542,16 @@ packages:
         integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==,
       }
 
-  "@macalinao/eslint-config@4.0.3":
+  "@macalinao/eslint-config@4.1.0":
     resolution:
       {
-        integrity: sha512-thtKZ2hS0sxZQ9GmctdQiRq8u6+fuT1d8ccQCkDRTODWjB2FLX+hw3KuRAr3Tf8iZk0IOUgQ+uHXH479YQeFXg==,
+        integrity: sha512-G5kyGLmm9qNMviAdN45KCQB+Omvc+XWPe2zNWDw5cvVRazZ6kH7vYiy4GwEZNaqqp6PEeTjMgj1MxcJgFHhSDQ==,
       }
 
-  "@macalinao/tsconfig@3.0.2":
+  "@macalinao/tsconfig@3.1.0":
     resolution:
       {
-        integrity: sha512-rOyMmQAS18LeEeiL+blnGcMMBahLRHpIdrnB3HxJmf38rVnzpKfLGWDFarfT1cQFQw/wu3DVqJPHkAx1z7Jx/w==,
+        integrity: sha512-e7oRnVaxxqB7zlB6KpjVNs69Zza/kV1WSgJ2g+CxgSMw0PFNLKFdV10QnkoGJcyBoaxjwFDue0ZCawFDiXwORA==,
       }
 
   "@manypkg/find-root@1.1.0":
@@ -3128,7 +3131,7 @@ snapshots:
 
   "@jridgewell/sourcemap-codec@1.5.0": {}
 
-  "@macalinao/eslint-config@4.0.3(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)":
+  "@macalinao/eslint-config@4.1.0(@types/eslint@9.6.1)(jiti@1.21.6)(typescript@5.7.3)":
     dependencies:
       "@eslint/js": 9.18.0
       "@typescript-eslint/eslint-plugin": 8.20.0(@typescript-eslint/parser@8.20.0(eslint@9.18.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.6))(typescript@5.7.3)
@@ -3154,7 +3157,7 @@ snapshots:
       - supports-color
       - typescript
 
-  "@macalinao/tsconfig@3.0.2": {}
+  "@macalinao/tsconfig@3.1.0": {}
 
   "@manypkg/find-root@1.1.0":
     dependencies:
