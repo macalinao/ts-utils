@@ -1,6 +1,6 @@
 # ts-utils
 
-Various utilities for TypeScript/JavaScript projects.
+Various utility libraries for TypeScript/JavaScript projects.
 
 ## License
 
