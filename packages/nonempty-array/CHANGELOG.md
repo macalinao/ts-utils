@@ -1,5 +1,12 @@
 # nonempty-array
 
+## 0.1.2
+
+### Patch Changes
+
+- 1b23618: Update dependencies
+- a3b8d6d: Return mutable types in map/groupBy
+
 ## 0.1.1
 
 ### Patch Changes

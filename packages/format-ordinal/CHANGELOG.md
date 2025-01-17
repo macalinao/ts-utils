@@ -1,5 +1,11 @@
 # format-ordinal
 
+## 0.1.2
+
+### Patch Changes
+
+- 1b23618: Update dependencies
+
 ## 0.1.1
 
 ### Patch Changes
