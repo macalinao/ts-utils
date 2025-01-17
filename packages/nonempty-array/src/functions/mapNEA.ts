@@ -1,4 +1,7 @@
-import type { NonEmptyArray, ReadonlyNonEmptyArray } from "../nonEmptyArray.js";
+import type {
+  MutableNonEmptyArray,
+  ReadonlyNonEmptyArray,
+} from "../nonEmptyArray.js";
 import { assertNEA } from "./assertNEA.js";
 
 /**
@@ -11,6 +14,6 @@ import { assertNEA } from "./assertNEA.js";
 export function mapNEA<TItem, TOutput>(
   items: ReadonlyNonEmptyArray<TItem>,
   fn: (el: TItem, index: number) => TOutput,
-): NonEmptyArray<TOutput> {
-  return assertNEA(items.map(fn));
+): MutableNonEmptyArray<TOutput> {
+  return assertNEA(items.map(fn)) as MutableNonEmptyArray<TOutput>;
 }
