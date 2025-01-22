@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.1.4
+
+### Patch Changes
+
+- 37194eb: Bump dependencies
+
 ## 0.1.3
 
 ### Patch Changes
