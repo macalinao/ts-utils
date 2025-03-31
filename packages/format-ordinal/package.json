@@ -2,7 +2,7 @@
   "name": "format-ordinal",
   "description": "Format numbers as ordinals in English.",
   "author": "Ian Macalinao <me@ianm.com>",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "Apache-2.0",
   "type": "module",
   "sideEffects": false,

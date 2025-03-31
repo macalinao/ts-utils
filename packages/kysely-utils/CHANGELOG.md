@@ -1,5 +1,11 @@
 # kysely-utils
 
+## 0.1.5
+
+### Patch Changes
+
+- b8dc5eb: Update dependencies
+
 ## 0.1.4
 
 ### Patch Changes
