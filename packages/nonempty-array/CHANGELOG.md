@@ -1,5 +1,11 @@
 # nonempty-array
 
+## 0.1.5
+
+### Patch Changes
+
+- cfd4366: Update dependencies
+
 ## 0.1.4
 
 ### Patch Changes
